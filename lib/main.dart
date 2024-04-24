@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        initialIndex: 2,
+        initialIndex: 1,
         length: myTab.length,
         child: Scaffold(
           appBar: AppBar(
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             bottom: TabBar(
               tabs: myTab,
               labelColor: Colors.black,
-              unselectedLabelColor: Colors.white,
+              unselectedLabelColor: Colors.black38,
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -49,11 +49,11 @@ class MyApp extends StatelessWidget {
               // indicatorColor: Colors.amber,
               // indicatorWeight: 5,
               // indicatorPadding: EdgeInsets.all(10),
-              indicator: const BoxDecoration(
+              indicator: BoxDecoration(
                 //argument indicatorColor, indicatorPadding, widht dan height akan diabaikan
                 color: Colors.amber,
-                // borderRadius: BorderRadius.circular(50),
-                border: Border(
+                borderRadius: BorderRadius.circular(16),
+                border: const Border(
                   bottom: BorderSide(
                     color: Colors.black,
                     width: 5,
@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           body: const TabBarView(
+            //list children yang ada pada TabBarView harus sama dengan length property dari DefaultTabController
             children: [
               Center(
                 child: Text(
